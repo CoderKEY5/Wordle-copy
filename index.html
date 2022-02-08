@@ -1,5 +1,11 @@
+<html>
+<head> 
+    KESHAV AND BAVANTH'S FRENCH WORDLE
+</head>
+</html>
+<script type="text/python">
 
-    import turtle, random
+import turtle, random
 word_list = ['livre','doigt','heure','froid','danse','arbre','lundi','orage','bisou','chien','chiot','aigle','lapin','court','merci','blanc','salut','verre','voire','chair','short','veste','grand','pomme','gomme','avoir','autre','temps','trois','aussi','terre','jenre','image','monde','vivre','forme','juste','aider','ligne','avant','droit','vivux','quand','votre','faire','pizza','biere','pates','aimer','porte']
 answer = random.choice(word_list) # choose a random word from the list
 y = 250 # y location
@@ -30,6 +36,7 @@ def check_guess(my_input,answer,y):
         else: draw_square(x,y,"red") # otherwise draws red
         count+=1 # add 1 to the count
         x += 75 # move x coordinate along by 75
+    hideturtle()
     turtle.penup() #Moves the turtle penup
     turtle.goto(x,y-25) #Moves it slightly down for the word
     turtle.write(my_input,font=("Verdana", 15, "normal")) # font verdana, size 15, normal style
@@ -40,13 +47,15 @@ for i in range(6): #Where the program starts
     check_guess(my_input,answer,y)  #checks the guess
     y -= 75 #y down by 75
     if my_input == answer:
+        hideturtle()
         turtle.penup()
         turtle.goto(-300,-200) #Always draws the congratulations in the same place
         turtle.write("Well Done!",font=("Verdana", 42, "normal"))
         break
 else: #Only runs if the for loop executes completely. i.e. You've used all your guesses.
+    hideturtle()
     turtle.penup()
     turtle.goto(-300,-200)
     turtle.write(answer,font=("Verdana", 42, "normal"))
 turtle.done() #Needs if you are using Pycharm and some other Python editors.
-    
+</script>
